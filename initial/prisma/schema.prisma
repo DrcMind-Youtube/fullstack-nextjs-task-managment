@@ -1,0 +1,32 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+// Model definitions (user, tache)
+
+model User {
+  id String @id @default(uuid())
+  email String @unique
+  nom String 
+  taches Tache[]
+}
+
+model Tache {
+  id String @id @default(uuid())
+  titre String 
+  description String
+  createdAt DateTime @default(now())
+  userId String
+  // Relation
+  user User @relation(fields: [userId], references: [id])
+}
+

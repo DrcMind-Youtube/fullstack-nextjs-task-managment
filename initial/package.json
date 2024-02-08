@@ -9,9 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^4.29.5",
+    "@clerk/themes": "^1.7.9",
+    "@prisma/client": "^5.9.1",
+    "lucide": "^0.323.0",
+    "lucide-react": "^0.323.0",
     "next": "14.1.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "sonner": "^1.4.0"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -20,6 +26,7 @@
     "autoprefixer": "^10.0.1",
     "daisyui": "^4.6.1",
     "postcss": "^8",
+    "prisma": "^5.9.1",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
   }

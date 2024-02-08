@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import { UserButton } from "@clerk/nextjs";
 
 type Props = {};
 
@@ -11,7 +12,9 @@ function Navbar({}: Props) {
           TaskApp 📝
         </Link>
       </div>
-      <div className="flex-none  gap-2">{/* user  */}</div>
+      <div className="flex-none  gap-2 pr-4">
+        <UserButton afterSignOutUrl="/" showName={true} />
+      </div>
     </div>
   );
 }
